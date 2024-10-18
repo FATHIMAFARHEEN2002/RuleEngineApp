@@ -29,8 +29,7 @@ def create_rule():
     ast = Node("operator", "AND", Node("operand", rule_string), None)
     return jsonify({"ast": str(ast)})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 
 
 
@@ -48,3 +47,6 @@ def combine_rules():
             combined_ast = new_ast
 
     return jsonify({"combined_ast": repr(combined_ast)})
+
+if __name__ == '__main__':
+    app.run(debug=True)
