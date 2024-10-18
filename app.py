@@ -32,3 +32,19 @@ def create_rule():
 if __name__ == '__main__':
     app.run(debug=True)
 
+
+
+# Combine Rules route
+@app.route('/combine_rules', methods=['POST'])
+def combine_rules():
+    rules = request.json.get('rules')  # List of rule strings
+    combined_ast = None
+
+    for rule in rules:
+        new_ast = Node("operand", rule)
+        if combined_ast:
+            combined_ast = Node("operator", "AND", combined_ast, new_ast)
+        else:
+            combined_ast = new_ast
+
+    return jsonify({"combined_ast": repr(combined_ast)})
