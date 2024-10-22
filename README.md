@@ -19,9 +19,9 @@ The Rule Engine API is a simple application designed to create, combine, and eva
   Rule Engine API is running!
 
 2. Create Rule
-Endpoint: /create_rule
-Method: POST
-Request Body:
+- Endpoint: /create_rule
+- Method: POST
+- Request Body:
 {
     "rule_string": "(age > 30 AND department = 'Sales')"
 }
