@@ -13,10 +13,8 @@ class Node:
     def __str__(self):
         return f"Node(type={self.node_type}, value={self.value})"
 
-    def __repr__(self):
-        return f"Node(type={self.node_type}, value={self.value}, left={self.left}, right={self.right})"
-
     def to_dict(self):
+        """Convert the Node object into a nested dictionary for JSON serialization."""
         return {
             "node_type": self.node_type,
             "value": self.value,
@@ -36,6 +34,7 @@ def create_rule():
     if not rule_string:
         return jsonify({"error": "Rule string is required."}), 400
 
+    # Creating an AST node
     ast = Node("operator", "AND", Node("operand", rule_string), None)
     return jsonify({"ast": ast.to_dict()})
 
