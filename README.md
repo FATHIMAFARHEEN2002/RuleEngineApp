@@ -95,6 +95,6 @@ The Rule Engine API is a simple application designed to create, combine, and eva
 - You can test the API endpoints using Postman or any other API client.
 
 - Example Tests
-1.Create Rule: Send a POST request to /create_rule with a valid JSON body containing rule_string.
-2.Combine Rules: Send a POST request to /combine_rules with a list of rules.
-3.Evaluate Rule: Send a POST request to /evaluate_rule with an AST and user data.
+- 1.Create Rule: Send a POST request to /create_rule with a valid JSON body containing rule_string.
+- 2.Combine Rules: Send a POST request to /combine_rules with a list of rules.
+- 3.Evaluate Rule: Send a POST request to /evaluate_rule with an AST and user data.
