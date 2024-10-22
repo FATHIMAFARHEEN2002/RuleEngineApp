@@ -48,5 +48,16 @@ def combine_rules():
 
     return jsonify({"combined_ast": repr(combined_ast)})
 
+# Evaluate Rule route
+@app.route('/evaluate_rule', methods=['POST'])
+def evaluate_rule():
+    ast = request.json.get('ast')  # Example: {"type": "operator", "value": "AND", ...}
+    data = request.json.get('data')  # Example: {"age": 35, "department": "Sales"}
+
+    # Placeholder logic for evaluation (expand this based on your AST design)
+    if ast["type"] == "operator" and data.get("age", 0) > 30:
+        return jsonify({"result": True})
+    return jsonify({"result": False})
+
 if __name__ == '__main__':
     app.run(debug=True)
