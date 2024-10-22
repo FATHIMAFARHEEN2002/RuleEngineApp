@@ -22,37 +22,37 @@ The Rule Engine API is a simple application designed to create, combine, and eva
 - Endpoint: /create_rule
 - Method: POST
 - Request Body:
-{
+- {
     "rule_string": "(age > 30 AND department = 'Sales')"
 }
 
-Response:
+- Response:
 {
     "ast": "Node(type=operator, value=AND)"
 }
-Description: Creates a new rule and returns its AST representation.
+- Description: Creates a new rule and returns its AST representation.
 
 4. Combine Rules
-Endpoint: /combine_rules
-Method: POST
-Request Body:
-{
+- Endpoint: /combine_rules
+- Method: POST
+- Request Body:
+- {
     "rules":["(age > 30 AND department = 'Sales')",
         "(salary > 50000 OR experience > 5)"
        
 }
 
-Response:
+- Response:
 {
     "combined_ast": "<__main__.Node object at 0x0000019A3B1510D0>"
 }
-Description: Combines multiple rules into a single AST.
+- Description: Combines multiple rules into a single AST.
 
 4. Evaluate Rule
-Endpoint: /evaluate_rule
-Method: POST
-Request Body:
-{
+- Endpoint: /evaluate_rule
+- Method: POST
+- Request Body:
+- {
     "ast": {
         "node_type": "operator",
         "value": "AND",
@@ -67,34 +67,34 @@ Request Body:
     }
 }
 
-Response:
-{
+- Response:
+- {
     "result": true
 }
-Description: Evaluates the given AST against the provided user data.
+- Description: Evaluates the given AST against the provided user data.
 
-Requirements
+- Requirements
 . Python 3.x
 . Flask
 
-Installation
+- Installation
 1.Clone the repository:
-  git clone https://github.com/FATHIMAFARHEEN2002/RuleEngineApp.git
+  - git clone https://github.com/FATHIMAFARHEEN2002/RuleEngineApp.git
   
 2.Change into the project directory
-  cd RuleEngineApp
+  - cd RuleEngineApp
   
 3.Install the required packages:
-  pip install Flask
+ -  pip install Flask
 
 4.Run the application:
-  python app.py
-  The API will be accessible at http://127.0.0.1:5000.
+- python app.py
+  - The API will be accessible at http://127.0.0.1:5000.
 
-Testing
-You can test the API endpoints using Postman or any other API client.
+- Testing
+- You can test the API endpoints using Postman or any other API client.
 
-Example Tests
+- Example Tests
 1.Create Rule: Send a POST request to /create_rule with a valid JSON body containing rule_string.
 2.Combine Rules: Send a POST request to /combine_rules with a list of rules.
 3.Evaluate Rule: Send a POST request to /evaluate_rule with an AST and user data.
