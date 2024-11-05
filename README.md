@@ -98,3 +98,12 @@ The Rule Engine API is a simple application designed to create, combine, and eva
   - 1. Create Rule: Send a POST request to /create_rule with a valid JSON body containing rule_string.
   - 2. Combine Rules: Send a POST request to /combine_rules with a list of rules.
   - 3. Evaluate Rule: Send a POST request to /evaluate_rule with an AST and user data.
+
+## License
+ - This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+ - For questions, suggestions, or contributions, please reach out to:
+
+    -  Fathima Farheen  
+    -  GitHub: FATHIMAFARHEEN2002
